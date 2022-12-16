@@ -36,6 +36,7 @@ void searñhQuote(string t);
 
 int main()
 {
+    setlocale(LC_ALL, "RUS");
     system("chcp 1251");
     setlocale(LC_ALL, "ru");
 
