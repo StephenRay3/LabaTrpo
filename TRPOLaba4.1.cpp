@@ -134,6 +134,8 @@ void Menu()
 
     void Ex1(string text)
     {
+        /*выводит текст, по нажатию произвольной клавиши поочередно выдел€ет каждое слово текста,
+        содержащее минимальное количество символов и определ€ет количество таких слов в тексте;*/
 
         vector<string> minWords = MinWordsArray(text);
 
@@ -143,14 +145,16 @@ void Menu()
         do
         {
             system("cls");
+            cout << text << endl << endl;
 
             cout << "--------------------------------------------------------\n\n";
 
-            cout << "“екущее слово (c минимальный размером, всего их " << "): " << minWords[index] << endl;
+            cout << "“екущее слово (c минимальный размером, всего их " << minWords.size() << "): " << minWords[index] << endl << endl << endl;
 
             cout << "≈сли вы хотите выйти, нажмите 'e', а если нет, то нажмите любую клавишу;\n";
 
             choice = _getch();
+            choice = toupper(choice);
 
             if (index == minWords.size() - 1)
             {
