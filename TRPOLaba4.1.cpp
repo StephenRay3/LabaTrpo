@@ -171,17 +171,33 @@ void Menu()
 
     void Ex2(string text)
     {
+        /*выводит предложения, определяет в каждом из них самое длинное
+        симметричное слово;*/
         system("cls");
 
         cout << text << endl << endl;
+        cout << "--------------------------------------------------------\n";
 
         vector<string> sentencies = SplitToEachSentence(text);
 
-        cout << "Palindroms:";
+        cout << "Palindroms:\n\n";
         for (int i = 0; i < sentencies.size(); i++)
         {
             //system("cls");
-            cout << "Sentence "  << FindPalindroms(sentencies[i]) << "\n";
+            cout << "Sentence " << i + 1 << ": " << FindPalindroms(sentencies[i]) << "\n";
         }
         cout << endl;
+        system("pause");
+    }
+    void Ex3(string text)
+    {
+        vector<int> numbers = searchNumbers(text);
+        cout << "Numbers from sentence:" << endl;
+        for (int num : numbers) {
+            cout << num << " ";
+            
+        }
+
+        cout << endl;
+        system("pause");
     }
