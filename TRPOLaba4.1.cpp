@@ -115,3 +115,103 @@ void Menu()
             break;
         }
     } while (choice != 0);
+}
+
+    void MenuText()
+    {
+        system("cls");
+        cout << "\t\t\t\t-----ћ≈Ќё-----\n\n";
+        cout << "1. ѕо нажатию произвольной клавиши поочередно выдел€ет каждое\n   слово текста, содержащее минимальное количество символов и определ€ет\n   количество таких слов в тексте;\n\n";
+        cout << "2. ¬ыводит предложени€, определ€ет в каждом из них самое длинное\n   симметричное слово;\n\n";
+        cout << "3. ƒл€ заданного в первом предложении в дес€тичной системе счислени€\n   натурального числа m определ€ет такое натуральное п, что двоична€ запись\n   п получаетс€ из двоичной записи m изменением пор€дка цифр на обратный\n\n";
+        cout << "4. ƒл€ текста последнего предложени€, €вл€ющегос€ правильной записью\n   римскими цифрами целого числа от 1 до 1999, получает это число;\n\n";
+        cout << "5. ¬ыводит предложени€, заключенные в кавычки, т.е. цитаты, слова\n   которых упор€дочены по алфавиту;\n\n";
+
+        cout << "\n0. ¬ыход;\n";
+
+        cout << "\n\n¬аш выбор: ";
+    }
+
+    void Ex1(string text)
+    {
+        /*выводит текст, по нажатию произвольной клавиши поочередно выдел€ет каждое слово текста,
+        содержащее минимальное количество символов и определ€ет количество таких слов в тексте;*/
+
+        vector<string> minWords = MinWordsArray(text);
+
+        char choice = ' ';
+        int index = 0;
+
+        do
+        {
+            system("cls");
+            cout << text << endl << endl;
+
+            cout << "--------------------------------------------------------\n\n";
+
+            cout << "“екущее слово (c минимальный размером, всего их " << minWords.size() << "): " << minWords[index] << endl << endl << endl;
+
+            cout << "≈сли вы хотите выйти, нажмите 'e', а если нет, то нажмите любую клавишу;\n";
+
+            choice = _getch();
+            choice = toupper(choice);
+
+            if (index == minWords.size() - 1)
+            {
+                cout << "\n“екст закончилс€. ѕринудительный выход.\n";
+                break;
+
+            }
+            if (choice != 'E') index++;
+
+        } while (choice != 'E');
+
+        cout << "—лов с минимальным размером: " << minWords.size() << endl << endl;
+    }
+
+    void Ex2(string text)
+    {
+        /*выводит предложени€, определ€ет в каждом из них самое длинное
+        симметричное слово;*/
+        system("cls");
+
+        cout << text << endl << endl;
+        cout << "--------------------------------------------------------\n";
+
+        vector<string> sentencies = SplitToEachSentence(text);
+
+        cout << "Palindroms:\n\n";
+        for (int i = 0; i < sentencies.size(); i++)
+        {
+            //system("cls");
+            cout << "Sentence " << i + 1 << ": " << FindPalindroms(sentencies[i]) << "\n";
+        }
+        cout << endl;
+        system("pause");
+    }
+    void Ex3(string text)
+{
+    /*3. дл€ заданного в первом предложении в дес€тичной системе счислени€ натурального числа m
+    определ€ет такое натуральное число n, что двоична€ запись числа n получаетс€ из двоичной записи m изменением
+    пор€дка цифр на обратный.*/
+
+    //n = 001 100
+    //m = 100 001
+
+    vector<int> numbers = searchNumbers(text);
+    vector<int> decimals = {};
+
+    cout << "Numbers from sentence:" << endl;
+    for (int num : numbers) {
+        cout << num << " ";
+        decimals.push_back(toDecimal(stoi(returnReverseString(toBinary(num)))));
+    }
+
+    cout << "\nReversed to binary & converted to decimal:" << endl;
+    for (int decimal : decimals) {
+        cout << decimal << " ";
+    }
+
+    cout << endl;
+    system("pause");
+}
