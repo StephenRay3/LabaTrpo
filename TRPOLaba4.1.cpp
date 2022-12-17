@@ -37,7 +37,7 @@ void searсhQuote(string t);
 int main()
 {
     system("chcp 1251");
-    setlocale(LC_ALL, "RUS");
+    setlocale(LC_ALL, "ru");
 
     Menu();
 
@@ -47,7 +47,6 @@ int main()
 void Menu()
 {
     system("cls");
-    setlocale(LC_ALL, "RUS");
 
     int choice = 0;
     string text;
@@ -121,7 +120,6 @@ void Menu()
     void MenuText()
     {
         system("cls");
-        setlocale(LC_ALL, "RUS");
         cout << "\t\t\t\t-----МЕНЮ-----\n\n";
         cout << "1. По нажатию произвольной клавиши поочередно выделяет каждое\n   слово текста, содержащее минимальное количество символов и определяет\n   количество таких слов в тексте;\n\n";
         cout << "2. Выводит предложения, определяет в каждом из них самое длинное\n   симметричное слово;\n\n";
@@ -169,4 +167,21 @@ void Menu()
         } while (choice != 'E');
 
         cout << "Слов с минимальным размером: " << minWords.size() << endl << endl;
+    }
+
+    void Ex2(string text)
+    {
+        system("cls");
+
+        cout << text << endl << endl;
+
+        vector<string> sentencies = SplitToEachSentence(text);
+
+        cout << "Palindroms:";
+        for (int i = 0; i < sentencies.size(); i++)
+        {
+            //system("cls");
+            cout << "Sentence "  << FindPalindroms(sentencies[i]) << "\n";
+        }
+        cout << endl;
     }
