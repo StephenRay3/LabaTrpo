@@ -190,14 +190,28 @@ void Menu()
         system("pause");
     }
     void Ex3(string text)
-    {
-        vector<int> numbers = searchNumbers(text);
-        cout << "Numbers from sentence:" << endl;
-        for (int num : numbers) {
-            cout << num << " ";
-            
-        }
+{
+    /*3. для заданного в первом предложении в десятичной системе счисления натурального числа m
+    определяет такое натуральное число n, что двоичная запись числа n получается из двоичной записи m изменением
+    порядка цифр на обратный.*/
 
-        cout << endl;
-        system("pause");
+    //n = 001 100
+    //m = 100 001
+
+    vector<int> numbers = searchNumbers(text);
+    vector<int> decimals = {};
+
+    cout << "Numbers from sentence:" << endl;
+    for (int num : numbers) {
+        cout << num << " ";
+        decimals.push_back(toDecimal(stoi(returnReverseString(toBinary(num)))));
     }
+
+    cout << "\nReversed to binary & converted to decimal:" << endl;
+    for (int decimal : decimals) {
+        cout << decimal << " ";
+    }
+
+    cout << endl;
+    system("pause");
+}
