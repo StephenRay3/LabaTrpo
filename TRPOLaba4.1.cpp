@@ -269,7 +269,10 @@ void Menu()
 
     cout << "Quote:\n";
 
-
+                               for (size_t i = 0; i < quote.size(); i++)
+    {
+                               std::cout << i + 1 << ". " << quote[i] << std::endl;
+    }                          
 
     system("pause");
 }
