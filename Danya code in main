@@ -41,7 +41,13 @@ void vhod()
 {
     
     bool flag = false;
- 
+    string login, password; 
+    cout << "Введите логин: " << endl; 
+    cin >> login; 
+    cout << "Введите пароль: " << endl; 
+    cin >> password; 
+    flag = check(login, password); 
+    if (flag == true)
     string login, password;
     cout << "Введите логин: " << endl;
     cin >> login;
