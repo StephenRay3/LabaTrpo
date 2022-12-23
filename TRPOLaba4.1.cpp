@@ -244,6 +244,7 @@ void Menu()
 
     std::cout << "Òåêñò:\n";
     std::cout << std::endl;
+                           std::cout << text << std::endl;
 
     std::cout << std::endl;
 
@@ -261,7 +262,7 @@ void Menu()
         else if (text[i] == '\"' && isQuote)
         {
             isQuote = false;
-
+                               quote.push_back(temp);
             temp.clear();
         }
     }
