@@ -215,3 +215,22 @@ void Menu()
     cout << endl;
     system("pause");
 }
+    void Ex4(string text)
+{
+        /*для текста последнего предложения, являющегося правильной записью римскими цифрами целого числа
+        от 1 до 1999, получает это число;*/
+        vector<string> sentencies = SplitToEachSentence(sentencies.size() - 1);
+
+        cout << sentencies[sentencies.size() - 1] << endl << endl;
+
+        for (int i = 0; i < sentencies.size(); i++)
+        {
+            int number = searchRomanNumbers(words[i]);
+
+            if (number != -1) {
+                cout << words[i] << ": " << number << endl;
+            }
+        }
+        cout << endl;
+        system("pause");
+}
