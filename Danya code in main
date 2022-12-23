@@ -22,7 +22,12 @@ users[100];
  
 void main()
 {
-    
+    setlocale(LC_ALL, "rus"); 
+    cout << "1 - Вход от имени пользователя" << endl; 
+    cout << "2 - Вход от имени администратора" << endl; 
+    int a; 
+    cin >> a; 
+    switch (a)
     {
  
     case 1: vhod();
