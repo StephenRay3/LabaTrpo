@@ -129,7 +129,18 @@ void admin()
     } 
  
     ////////////////////////////////////////////////////////////////////////////////////////////
-    
+    void register_1() 
+    { 
+        string login_new, password_new; 
+        cout << "Введите логин нового пользователя: " << endl; 
+        cin >> login_new; 
+        cout << "Введите пароль нового пользователя: " << endl; 
+        cin >> password_new; 
+        ofstream fout("users.txt", ios::app); 
+        fout << login_new << "" << password_new << endl; 
+        cout << "Поздравляем! Регистрация прошла успешно! " << endl; 
+        main(); 
+    }
  
     void read(string login_new, string password_new)
     {
