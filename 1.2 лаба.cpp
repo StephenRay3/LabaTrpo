@@ -1,9 +1,9 @@
 ﻿/*#include <iostream>
-using namespace std;
+using namespace   std;  
 int main()
 {
 	int R;
-		bool A = 1;
+	bool A = 1;	
 	bool B = 0;
 	bool C = 1;
 		R = (A || !(A && B) || C);
