@@ -6,7 +6,14 @@
 using namespace std;
  
  
-
+bool check(string, string); 
+bool check_1(string, string); 
+void read(string, string ); 
+void admin(); 
+void vhod(); 
+void login(); 
+void register_1(); 
+struct Users
 {
     string login_new;
     string password_new;
